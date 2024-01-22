@@ -1,0 +1,53 @@
+SELECT *
+FROM EMPLOYEES;
+
+/*
+    AGGREGATE FUNCTIONS - MULTI ROWS - GROUP FUNCTIONS
+        -count --> it will count rows
+        -max --> it will return max value
+        -min --> it will return min value
+        -total --> it will return total value
+        -avarage --> it will return avarage value
+
+    Aggregate functions takes multi row and return one result
+    All of them ignore null values.
+ */
+
+--display how many department we have?
+SELECT COUNT(*)
+FROM DEPARTMENTS;
+
+--HOW MANY LOCATIONS WE HAVE ?
+SELECT COUNT(*)
+FROM LOCATIONS;
+
+--NULL VALUE DOES NOT EXIST THAT'S WHY RESULT IS -->106
+SELECT COUNT(DEPARTMENT_ID)
+FROM EMPLOYEES;
+
+--TASK:
+--HOW MANY DIFFERENT FIRST NAME WE HAVE
+SELECT COUNT(DISTINCT FIRST_NAME)
+FROM EMPLOYEES;
+
+--HOW MANY EMPLOYEES WORKING AS IT PROGRAMMER OR SA_REP
+SELECT COUNT(*)
+FROM EMPLOYEES
+WHERE JOB_ID IN ('IT_PROG', 'SA_REP');
+
+--DISPLAY MAX SALARY
+SELECT MAX(SALARY)
+FROM EMPLOYEES;
+--DISPLAY MIN SALARY
+SELECT MIN(SALARY)
+FROM EMPLOYEES;
+--DISPLAY AVERAGE SALARY
+SELECT AVG(SALARY)
+FROM EMPLOYEES;
+
+--IT IS RETURN THE RESULT ONY 2 DIGIT
+SELECT ROUND(AVG(SALARY),2)
+FROM EMPLOYEES;
+
+--DISPLAY SUM OF SALARY
+SELECT SUM(SALARY)FROM EMPLOYEES;
